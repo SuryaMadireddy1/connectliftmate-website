@@ -70,11 +70,19 @@ const HeroSection = ({ setShowDemo }: HeroSectionProps) => {
                 Try Demo
               </Button>
             </div>
-            <div className="mt-8 text-sm text-gray-600 dark:text-gray-400 flex items-center">
-              <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span>Free forever. Premium AI features optional.</span>
+            <div className="mt-8 space-y-2">
+              <div className="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Free forever. No subscriptions or hidden fees.</span>
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <span>Bring your own Groq API key for AI features</span>
+              </div>
             </div>
           </motion.div>
           

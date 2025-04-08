@@ -15,11 +15,11 @@ import AIDemo from "@/components/AIDemo";
 // Feature data
 export const features = [
   { title: "Saved Connection Notes", desc: "Store, manage, and reuse frequently sent connection requests.", icon: "📌" },
-  { title: "Personalized AI Messages", desc: "Use your Groq API key to generate custom messages using LLaMA3.", icon: "🧠" },
+  { title: "Personalized AI Messages", desc: "Generate custom messages using LLaMA3 with your own Groq API key.", icon: "🧠" },
   { title: "Boolean Search Builder", desc: "Craft advanced LinkedIn Boolean queries with ease.", icon: "🔍" },
   { title: "Job Tracker Dashboard", desc: "Keep track of your job applications in a structured view.", icon: "📊" },
   { title: "Export / Import Data", desc: "Take your data anywhere by exporting or importing JSON files.", icon: "💾" },
-  { title: "Gmail Sign-in Access", desc: "Authenticate securely via Gmail to unlock AI features.", icon: "📧" }
+  { title: "BYOK (Bring Your Own Key)", desc: "Use your own Groq API key for AI features - no subscription needed!", icon: "🔑" }
 ];
 
 // Testimonial data
@@ -48,7 +48,7 @@ export const testimonials = [
 export const faqData = [
   {
     question: "Is this extension really free?",
-    answer: "Yes! All core features are completely free to use, including saving templates, basic boolean search, and data export/import. AI features require a Plus or Pro subscription, or you can use your own Groq API key."
+    answer: "Yes! All features are completely free to use, including saving unlimited templates, advanced boolean search, job tracking, and data export/import. AI features require you to provide your own Groq API key."
   },
   {
     question: "Will my data sync across devices?",
@@ -56,7 +56,11 @@ export const faqData = [
   },
   {
     question: "How does the AI message generation work?",
-    answer: "We use Groq's API with LLaMA3 to generate personalized connection messages based on the profile information you provide. You can either use our service with a Plus/Pro subscription or connect your own Groq API key for unlimited generations."
+    answer: "We use Groq's API with LLaMA3 to generate personalized connection messages based on the profile information you provide. You'll need to provide your own Groq API key to use this feature. We don't charge for AI generations - you only pay for what you use directly with Groq."
+  },
+  {
+    question: "Where do I get a Groq API key?",
+    answer: "You can sign up for a free Groq API key at groq.com. They offer generous free tier limits that are sufficient for most users. Once you have your key, simply enter it in the extension settings to enable AI message generation."
   },
   {
     question: "Can I import/export my notes?",
@@ -72,50 +76,19 @@ export const faqData = [
 export const pricingData = [
   {
     title: "Free",
-    description: "Perfect for getting started",
+    description: "Everything you need to get started",
     price: "0",
     period: "forever",
     features: [
-      "Save up to 10 connection templates",
-      "Basic Boolean search builder",
-      "Export/Import your data"
+      "Save unlimited connection templates",
+      "Advanced Boolean search builder",
+      "Export/Import your data",
+      "Job tracking dashboard",
+      "AI message generation (with your own API key)"
     ],
-    disabledFeatures: [
-      "AI message generation"
-    ],
+    disabledFeatures: [],
     buttonText: "Install Free",
-    buttonStyle: "w-full py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium rounded-lg transition"
-  },
-  {
-    title: "Plus",
-    description: "For serious networkers",
-    price: "4.99",
-    period: "month",
-    features: [
-      "Everything in Free",
-      "Unlimited connection templates",
-      "AI message generation (25/mo)",
-      "Advanced job tracking"
-    ],
-    disabledFeatures: [],
-    buttonText: "Get Started",
-    buttonStyle: "w-full py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition shadow-md",
-    isPopular: true
-  },
-  {
-    title: "Pro",
-    description: "For power users",
-    price: "9.99",
-    period: "month",
-    features: [
-      "Everything in Plus",
-      "Unlimited AI message generation",
-      "Priority customer support",
-      "Early access to new features"
-    ],
-    disabledFeatures: [],
-    buttonText: "Upgrade to Pro",
-    buttonStyle: "w-full py-3 bg-gray-800 dark:bg-gray-700 hover:bg-gray-900 dark:hover:bg-gray-600 text-white font-medium rounded-lg transition"
+    buttonStyle: "w-full py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition shadow-md"
   }
 ];
 
@@ -140,7 +113,7 @@ const LandingPage = () => {
   }, [darkMode]);
 
   // Function to scroll to a section
-  const scrollToId = (id) => {
+  const scrollToId = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({

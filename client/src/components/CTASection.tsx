@@ -12,8 +12,12 @@ const CTASection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to supercharge your LinkedIn networking?</h2>
-          <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/80 mb-4 max-w-2xl mx-auto">
             Join thousands of professionals who are already making meaningful connections with ConnectLift.
+          </p>
+          <p className="text-md text-white/90 mb-8 max-w-2xl mx-auto bg-white/10 p-3 rounded-lg inline-block">
+            <span className="font-semibold">100% Free</span> • No subscriptions or hidden fees • 
+            <span className="ml-1">Just bring your own API key for AI features</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
