@@ -33,7 +33,7 @@ const HeroSection = ({ setShowDemo }: HeroSectionProps) => {
   return (
     <section 
       id="hero" 
-      className="pt-28 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 bg-gradient-to-br from-white via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 transition-colors duration-300"
+      className="pt-28 md:pt-32 pb-16 md:pb-24 px-4 md:px-8 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-indigo-900/30 dark:to-purple-900/20 transition-colors duration-300"
     >
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -41,11 +41,28 @@ const HeroSection = ({ setShowDemo }: HeroSectionProps) => {
             className="w-full md:w-1/2 mb-12 md:mb-0 md:pr-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ 
+              duration: 0.7,
+              type: "spring",
+              stiffness: 100
+            }}
           >
-            <div className="inline-block px-3 py-1 mb-6 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-sm font-medium">
-              LinkedIn Networking Superpower ⚡
-            </div>
+            <motion.div 
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 200, 
+                damping: 10,
+                delay: 0.2
+              }}
+              className="inline-block px-4 py-2 mb-6 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-sm font-medium shadow-lg"
+            >
+              <div className="flex items-center space-x-1">
+                <span className="animate-pulse">⚡</span>
+                <span>LinkedIn Networking Superpower</span>
+              </div>
+            </motion.div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               <span>Make meaningful LinkedIn connections with </span>
               <span 
@@ -58,18 +75,41 @@ const HeroSection = ({ setShowDemo }: HeroSectionProps) => {
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-xl">
               Boost your networking impact with smart connection requests, AI-powered messaging, and organized job tracking.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="xl" variant="gradient">
-                Add to Chrome
-              </Button>
-              <Button 
-                size="xl" 
-                variant="white"
-                onClick={() => setShowDemo(true)}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                Try Demo
-              </Button>
-            </div>
+                <Button size="xl" variant="gradient" className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:shadow-lg hover:shadow-purple-500/30 transition-shadow">
+                  <span className="relative z-10">Add to Chrome</span>
+                  <span className="absolute right-4 ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                  </span>
+                </Button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <Button 
+                  size="xl" 
+                  variant="white"
+                  onClick={() => setShowDemo(true)}
+                  className="hover:shadow-lg hover:shadow-gray-300/30 dark:hover:shadow-gray-900/30 transition-shadow"
+                >
+                  Try Demo
+                </Button>
+              </motion.div>
+            </motion.div>
             <div className="mt-8 space-y-2">
               <div className="text-sm text-gray-600 dark:text-gray-400 flex items-center">
                 <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
