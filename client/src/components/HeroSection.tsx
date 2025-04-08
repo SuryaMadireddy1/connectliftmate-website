@@ -63,10 +63,10 @@ const HeroSection = ({ setShowDemo }: HeroSectionProps) => {
                 <span>LinkedIn Networking Superpower</span>
               </div>
             </motion.div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
               <span>Make meaningful LinkedIn connections with </span>
               <span 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
                 ref={typedRef}
               >
                 personalized messages

@@ -47,7 +47,7 @@ const FAQSection = ({ faqData }: FAQSectionProps) => {
                 className="flex justify-between items-center w-full p-5 bg-white dark:bg-gray-900 rounded-lg shadow-sm hover:shadow-md transition"
                 onClick={() => toggleFaq(index)}
               >
-                <h3 className="text-lg font-medium text-left">{faq.question}</h3>
+                <h3 className="text-lg font-medium text-left text-gray-900 dark:text-white">{faq.question}</h3>
                 <svg 
                   className={`w-5 h-5 transition-transform ${expandedFaq === index ? '' : 'transform rotate-180'}`}
                   fill="none" 
@@ -59,7 +59,7 @@ const FAQSection = ({ faqData }: FAQSectionProps) => {
                 </svg>
               </button>
               <div className={`bg-white dark:bg-gray-900 px-5 pt-0 pb-5 rounded-b-lg shadow-sm ${expandedFaq === index ? 'block' : 'hidden'}`}>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-700 dark:text-gray-300">
                   {faq.answer}
                 </p>
               </div>

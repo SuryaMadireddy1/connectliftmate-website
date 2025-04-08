@@ -72,8 +72,8 @@ const FeaturesSection = ({ features }: FeaturesSectionProps) => {
                 }}
               >
                 <div className={`text-4xl mb-4 ${iconColors[index % iconColors.length]}`}>{feature.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 flex-grow">{feature.desc}</p>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{feature.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 flex-grow">{feature.desc}</p>
               </motion.div>
             );
           })}
