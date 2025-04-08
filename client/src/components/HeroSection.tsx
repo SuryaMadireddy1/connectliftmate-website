@@ -14,14 +14,19 @@ const HeroSection = ({ setShowDemo }: HeroSectionProps) => {
     if (typedRef.current) {
       const typed = new Typed(typedRef.current, {
         strings: [
-          "Save your best LinkedIn messages.",
-          "Connect smarter, not harder.",
-          "Track jobs. Automate follow-ups.",
-          "Use AI to personalize everything."
+          "personalized messages",
+          "automated follow-ups",
+          "intelligent connections",
+          "smarter networking"
         ],
-        typeSpeed: 50,
-        backSpeed: 30,
+        typeSpeed: 70,
+        backSpeed: 40,
+        startDelay: 500,
+        backDelay: 1500,
         loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        smartBackspace: true,
       });
       
       return () => {
@@ -64,13 +69,16 @@ const HeroSection = ({ setShowDemo }: HeroSectionProps) => {
               </div>
             </motion.div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
-              <span>Make meaningful LinkedIn connections with </span>
-              <span 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
-                ref={typedRef}
-              >
-                personalized messages
-              </span>
+              <div className="mb-2">Make meaningful LinkedIn</div>
+              <div className="flex flex-wrap items-center">
+                <span className="mr-2">connections with</span>
+                <span 
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 inline-block min-w-[200px] md:min-w-[280px]"
+                  ref={typedRef}
+                >
+                  personalized messages
+                </span>
+              </div>
             </h1>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-xl">
               Boost your networking impact with smart connection requests, AI-powered messaging, and organized job tracking.
@@ -132,7 +140,7 @@ const HeroSection = ({ setShowDemo }: HeroSectionProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="rounded-xl shadow-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 overflow-hidden" style={{ animation: 'float 3s ease-in-out infinite' }}>
+            <div className="rounded-xl shadow-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 overflow-hidden" style={{ animation: 'float 4s ease-in-out infinite' }}>
               <div className="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 px-4 py-3 flex items-center">
                 <div className="flex space-x-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
